@@ -1,0 +1,14 @@
+Add the entries below to ~/.profile:
+
+# add Android SDK platform tools to path
+if [ -d "$HOME/Android/android-sdk/platform-tools" ]; then
+    PATH="$HOME/Android/android-sdk/platform-tools:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/Android/.bin" ] ; then
+    PATH="$HOME/Android/.bin:$PATH"
+fi
+
+After running Android Studio and downloading the required Android SDK platform tools during setup, run the following command in Terminal:
+source ~/.profile
