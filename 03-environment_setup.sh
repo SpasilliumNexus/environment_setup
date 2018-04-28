@@ -8,12 +8,16 @@ ANDROID_TOOLCHAIN=https://android.googlesource.com/platform/prebuilts/gcc/linux-
 ANYKERNEL_REPO=git@github.com:SpasilliumNexus/anykernel2.git
 OMNIROM_KERNEL_REPO=git@github.com:SpasilliumNexus/omni-android_kernel_oneplus_msm8996.git
 OPENGAPPS_REPO=https://github.com/opengapps/opengapps.git
+OPENGAPPS_SN_REPO=git@github.com:SpasilliumNexus/opengapps.git
 PHONOGRAPH_REPO=git@github.com:SpasilliumNexus/phonograph.git
 SUPERRSKITCHEN_REPO=git@gitlab.com:superr/superrs-kitchen3.git
 
 
+# Needed for building OpenGapps packages
+sudo apt-add-repository ppa:maarten-fonville/android-build-tools -y
+
 # Missing in Ubuntu 18.04: libesd0-dev
-sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzip lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev openjdk-8-jdk
+sudo apt install -y android-build-tools-installer bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzip lzop openjdk-8-jdk pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev
 
 
 mkdir $ANDROID_DIR
@@ -47,7 +51,7 @@ mkdir -p $DEVELOPMENT_DIR/android-kernels/omnirom
 
 
 (cd $DEVELOPMENT_DIR; git clone $OPENGAPPS_REPO)
-(cd $DEVELOPMENT_DIR/opengapps; git checkout master)
+(cd $DEVELOPMENT_DIR/opengapps; git checkout master; git remote add spasilliumnexus $OPENGAPPS_SN_REPO)
 
 
 (cd $DEVELOPMENT_DIR; git clone $PHONOGRAPH_REPO)
