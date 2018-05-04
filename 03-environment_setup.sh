@@ -11,7 +11,6 @@ OMNIROM_KERNEL_REPO=git@github.com:SpasilliumNexus/omni-android_kernel_oneplus_m
 OPENGAPPS_REPO=https://github.com/opengapps/opengapps.git
 OPENGAPPS_SN_REPO=git@github.com:SpasilliumNexus/opengapps.git
 PHONOGRAPH_REPO=git@github.com:SpasilliumNexus/phonograph.git
-SUPERRSKITCHEN_REPO=git@gitlab.com:superr/superrs-kitchen3.git
 
 
 # Needed for building OpenGapps packages
@@ -40,10 +39,6 @@ mkdir -p $ANDROID_DIR/toolchains
 
 (cd $ANDROID_DIR; git clone $ANYKERNEL_REPO)
 (cd $ANDROID_DIR/anykernel2; git checkout android-8.1-custom)
-
-
-(cd $ANDROID_DIR; git clone $SUPERRSKITCHEN_REPO superkitchen)
-(cd $ANDROID_DIR/superkitchen; git checkout master)
 
 
 mkdir -p $DEVELOPMENT_DIR/android-kernels/lineageos
