@@ -6,6 +6,7 @@ DOWNLOAD_DIR=$HOME/Downloads
 ANDROID_STUDIO=https://dl.google.com/dl/android/studio/ide-zips/3.1.2.0/android-studio-ide-173.4720617-linux.zip
 ANDROID_TOOLCHAIN=https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9
 ANYKERNEL_REPO=git@github.com:SpasilliumNexus/anykernel2.git
+LINEAGEOS_KERNEL_REPO=git@github.com:SpasilliumNexus/lineage-android_kernel_oneplus_msm8996.git
 OMNIROM_KERNEL_REPO=git@github.com:SpasilliumNexus/omni-android_kernel_oneplus_msm8996.git
 OPENGAPPS_REPO=https://github.com/opengapps/opengapps.git
 OPENGAPPS_SN_REPO=git@github.com:SpasilliumNexus/opengapps.git
@@ -43,6 +44,11 @@ mkdir -p $ANDROID_DIR/toolchains
 
 (cd $ANDROID_DIR; git clone $SUPERRSKITCHEN_REPO superkitchen)
 (cd $ANDROID_DIR/superkitchen; git checkout master)
+
+
+mkdir -p $DEVELOPMENT_DIR/android-kernels/lineageos
+(cd $DEVELOPMENT_DIR/android-kernels/lineageos; git clone $LINEAGEOS_KERNEL_REPO)
+(cd $DEVELOPMENT_DIR/android-kernels/lineageos/lineage-android_kernel_oneplus_msm8996; git checkout lineage-15.1-custom)
 
 
 mkdir -p $DEVELOPMENT_DIR/android-kernels/omnirom
