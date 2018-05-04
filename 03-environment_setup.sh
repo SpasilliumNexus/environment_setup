@@ -17,7 +17,7 @@ PHONOGRAPH_REPO=git@github.com:SpasilliumNexus/phonograph.git
 sudo apt-add-repository ppa:maarten-fonville/android-build-tools -y
 
 # Missing in Ubuntu 18.04: libesd0-dev
-sudo apt install -y android-build-tools-installer bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzip lzop openjdk-8-jdk pngcrush python rsync schedtool squashfs-tools xsltproc zip zlib1g-dev
+sudo apt install -y android-build-tools-installer bc bison build-essential bridge-utils ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libvirt-bin libwxgtk3.0-dev libxml2 libxml2-utils lzip lzop openjdk-8-jdk pngcrush python qemu-kvm rsync schedtool squashfs-tools ubuntu-vm-builder xsltproc zip zlib1g-dev
 
 
 mkdir $ANDROID_DIR
